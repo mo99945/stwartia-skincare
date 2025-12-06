@@ -2,8 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 import { ProductCard } from './components/ProductCard';
 
-// New component for category cards
-const CategoryCard = ({ imageUrl, name, description, href }) => (
+// Define the interface for the component's props
+interface CategoryCardProps {
+  imageUrl: string;
+  name: string;
+  description: string;
+  href: string;
+}
+
+// New component for category cards, now with explicit types
+const CategoryCard: React.FC<CategoryCardProps> = ({ imageUrl, name, description, href }) => (
   <Link href={href} legacyBehavior>
     <a className="group relative block aspect-square w-full h-full overflow-hidden rounded-lg">
       <div 
